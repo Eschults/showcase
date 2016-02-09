@@ -27,11 +27,17 @@
 }
 
 /* Navbar right section (with form, links, button) */
-.navbar-side {
+.navbar-left {
   flex: 1 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+.navbar-right {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* Navbar item */
@@ -133,7 +139,7 @@
   border-top: 1px solid #E6E6E6;
 }
 .brand {
-  font-family: Cinzel;
+  // font-family: Cinzel;
   font-weight: normal;
   font-size: 25px;
   &:hover,

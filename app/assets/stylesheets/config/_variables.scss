@@ -2,11 +2,11 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-// @import url("http://fonts.googleapis.com/css?family=Raleway:400,100,300,700,500");
-@import url(https://fonts.googleapis.com/css?family=Cinzel:400,700,900);
+@import url("http://fonts.googleapis.com/css?family=Raleway:400,100,300,700,500");
+// @import url(https://fonts.googleapis.com/css?family=Cinzel:400,700,900);
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 $base-font: "Varela Round", "Helvetica", "sans-serif";
-$header-font: "Cinzel", "Helvetica", "sans-serif";
+$header-font: Raleway, "Cinzel", "Helvetica", "sans-serif";
 
 // Local fonts (uncomment following lines)
 // @font-face {
