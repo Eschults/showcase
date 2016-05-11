@@ -51,19 +51,3 @@
     margin-bottom: 12px;
   }
 }
-
-.stream {
-  padding: 30px 150px;
-  .article {
-    .article-header {
-      margin-bottom: 15px;
-    }
-    .published-on {
-      color: $gray-light;
-      font-style: italic;
-    }
-    p {
-      line-height: 1.6em;
-    }
-  }
-}

@@ -8,49 +8,21 @@
 </div>
 <div class="container">
   <div class="stream">
-    <div class="article" id="one">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="article-header">
-            <h4>Procès de l'électricien</h4>
-            <span class="published-on">Publié le 5 avril 2016</span>
-          </div>
-          <div class="article-content">
-            <p>
-              Lorsqu’elle s’avance vers la barre pour témoigner, Julie semble se faire toute petite, épaules rentrées, tête baissée, comme pour s’excuser. Pour s’excuser de ne pas faire partie des victimes les plus graves car, selon ses mots, « par rapport aux autres, ce n’était presque rien».
-            </p>
-            <p>
-              Cet après-midi de 1990, Julie avait à peine dix ans. Alors qu’elle rentrait dans son immeuble, un homme âgé d’une cinquantaine d’années qui se trouvait dans le hall lui a demandé de l’aider à réparer le compteur électrique. Comme pour les autres, il a prétexté être électricien et devoir intervenir pour réparer un compteur électrique de son immeuble. Comme les autres, Julie l’a cru. A elle aussi, on lui avait pourtant répété qu’il ne fallait pas faire confiance aux inconnus. Mais « il n’avait pas l’air menaçant ». A cet instant pourtant, Giovanni Costa avait flairé sa proie. Le même scenario glaçant, rapporté inlassablement par chacune des victimes quasiment au mot près, s’est mis en route. Giovanni Costa prétendant ne pouvoir accéder au compteur électrique situé trop haut lui a proposé de la porter afin qu’elle puisse y accéder. La saisissant d’abord à la taille, Giovanni Costa s’est vite empressé de passer ses mains sous son tee-shirt puis de la saisir au niveau du sexe et de la caresser. C’est alors que Julie lui a demandé de redescendre et il l’a reposée à terre, comme s’il ne s’était rien passé. « Tu as été très gentille avec moi » a ensuite glissé Giovanni Costa avant de la saisir de nouveau pour l’embrasser dans le cou et disparaître de l’immeuble.
-            </p>
-            <p>
-              Julie reconnaît quand même qu’il y a eu « un avant et un après ». Un après dans lequel elle n’a pu se déplacer seule dans le quartier pendant des mois, pendant lequel elle a tremblé à l’idée de le recroiser et que « ça aille plus loin ». « Mais j’ai de la chance insiste- t-elle, il n’y a rien eu d’autre ». Puis, se reprenant avec une voix encore plus feutrée, « il n’y a pas eu pénétration ».
-            </p>
-            <p>
-              La culpabilité des victimes de violences sexuelles n’attend pourtant pas la pénétration. Comme toutes les autres victimes de Giovanni Costa, Julie avoue avoir eu honte, avoir douté de ses souvenirs, de ses déclarations. Longtemps, elle reconnaît avoir ressassé cet épisode, se demandant si au fond, Giovanni Costa n’était pas réellement un électricien et qu’elle n’avait pas fantasmé toute cette histoire et accusé un innocent à tort.
-            </p>
-            <p>
-              Aujourd’hui Julie sait qu’elle avait dit vrai. Elle sait que cet après-midi là, ce dont elle a été victime s’appelle une agression sexuelle. Aujourd’hui, depuis que la police l’a recontactée en 2013 au sujet de l’enquête qu’elle venait d’ouvrir à l’encontre de Giovanni Costa, Julie sait qu’elle est une victime.
-            </p>
-            <p>
-              Pourtant, ce n’est pas en qualité de victime que la justice l’a appelée à la barre aujourd’hui. Aujourd’hui, devant la Cour d’assises, Julie a été entendue en qualité de simple témoin car les faits sont, pour elle, comme pour toutes les femmes qui se sont présentées à la barre cette après-midi, manifestement prescrits. Alors demain, Julie, Maria, Mariella, Mélanie, Isabelle reprendront le cours de leur vie, comme si ce procès n’avait jamais été leur procès.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="article" id="two">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, veniam, beatae. Quod ad ea deleniti quas sed ipsam temporibus eos nobis consectetur placeat, dignissimos, perferendis laboriosam maxime corporis officiis voluptatum?
-        </div>
-      </div>
-    </div>
-    <div class="article" id="three">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, veniam, beatae. Quod ad ea deleniti quas sed ipsam temporibus eos nobis consectetur placeat, dignissimos, perferendis laboriosam maxime corporis officiis voluptatum?
-        </div>
-      </div>
-    </div>
+    <% @articles.each do |article| %>
+      <%= render "shared/article", article: article %>
+    <% end %>
   </div>
 </div>
+<% content_for :js do %>
+  <script>
+    $(document).ready(function() {
+      $(window).on('scroll', function() {
+        if ($('.stream').position().top - 70 <= $(window).scrollTop()) {
+          $('nav').addClass('navbar-white');
+        } else {
+          $('nav').removeClass('navbar-white');
+        }
+      })
+    })
+  </script>
+<% end %>
