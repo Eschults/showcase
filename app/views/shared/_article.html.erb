@@ -2,7 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="article-header">
-        <% if policy(article).update? %>
+        <% if user_signed_in? && policy(article).update? %>
           <%= link_to("<i class='fa fa-edit'></i>".html_safe, edit_article_path(article), class: "pull-right") %>
         <% end %>
         <h2 class="hidden-sm hidden-xs"><%= article.title %></h2>
