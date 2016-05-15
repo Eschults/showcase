@@ -6,13 +6,15 @@
     <h4 class="subtitle"><%= t('.subtitle', default: "Carnets de justice") %></h4>
   </div>
 </div>
-<div class="container">
-  <div class="stream">
-    <% @articles.each do |article| %>
-      <%= render "shared/article", article: article %>
-    <% end %>
+<% if @articles.any? %>
+  <div class="container">
+    <div class="stream">
+      <% @articles.each do |article| %>
+        <%= render "shared/article", article: article %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 <% content_for :js do %>
   <script>
     $(document).ready(function() {
