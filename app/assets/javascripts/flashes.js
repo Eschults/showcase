@@ -4,4 +4,4 @@ $(document).ready(function() {
       $('.alert').slideUp();
     }, 5000);
   }
-}
+});

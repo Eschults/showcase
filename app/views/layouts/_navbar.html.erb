@@ -10,6 +10,9 @@
       <%= link_to t('.chronicles', default: "Chroniques judiciaires"), articles_path, class: "navbar-link navbar-item" %>
       <%= link_to t('.stories', default: "Histoires de justice"), contact_path, class: "navbar-link navbar-item" %>
       <%= link_to t('.short', default: "Brèves de prétoires"), contact_path, class: "navbar-link navbar-item" %>
+      <% if user_signed_in? %>
+        <%= link_to t('.logout', default: "Deconnexion"), destroy_user_session_path, method: :delete, class: "navbar-link navbar-item" %>
+      <% end %>
     </div>
   </div>
 </nav>

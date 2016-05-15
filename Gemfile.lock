@@ -76,6 +76,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-i18n (1.0.1)
+    devise-i18n-views (0.3.7)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -215,6 +217,8 @@ DEPENDENCIES
   cloudinary
   coffee-rails
   devise
+  devise-i18n
+  devise-i18n-views
   figaro
   font-awesome-sass
   jbuilder (~> 2.0)

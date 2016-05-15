@@ -16,6 +16,12 @@
 <% content_for :js do %>
   <script>
     $(document).ready(function() {
+      if ($('.alert').length > 0) {
+        $('.navbar-fixed').css('top', 52);
+        setTimeout(function() {
+          $('.navbar-fixed').css('top', 0);
+        }, 5000);
+      }
       $(window).on('scroll', function() {
         if ($('.stream').position().top - 70 <= $(window).scrollTop()) {
           $('nav').addClass('navbar-white');
