@@ -2,14 +2,22 @@
 <nav class="navbar-ed <%= params[:action] == "home" ? 'navbar-fixed' : 'navbar-white' %>">
   <div class="col-xs-6">
     <div class="navbar-left">
-      <%= link_to t('.brand', default: ""), root_path, class: "brand navbar-item" %>
+      <%= link_to root_path, class: "brand navbar-item" do %>
+        <i class="fa fa-institution"></i>
+      <% end %>
     </div>
   </div>
   <div class="col-xs-6">
     <div class="navbar-right">
-      <%= link_to t('.chronicles', default: "Chroniques judiciaires"), articles_path, class: "navbar-link navbar-item" %>
-      <%= link_to t('.stories', default: "Histoires de justice"), articles_path, class: "navbar-link navbar-item" %>
-      <%= link_to t('.short', default: "Brèves de prétoires"), articles_path, class: "navbar-link navbar-item" %>
+      <% if Article.where(category: "Chroniques judiciaires").count > 0 %>
+        <%= link_to t('.chronicles', default: "Chroniques judiciaires"), articles_path(category: "Chroniques judiciaires"), class: "navbar-link navbar-item" %>
+      <% end %>
+      <% if Article.where(category: "Histoires de justice").count > 0 %>
+        <%= link_to t('.stories', default: "Histoires de justice"), articles_path(category: "Histoires de justice"), class: "navbar-link navbar-item" %>
+      <% end %>
+      <% if Article.where(category: "Brèves de prétoires").count > 0 %>
+        <%= link_to t('.short', default: "Brèves de prétoires"), articles_path(category: "Brèves de prétoires"), class: "navbar-link navbar-item" %>
+      <% end %>
       <% if user_signed_in? %>
         <%= link_to t('.logout', default: "Deconnexion"), destroy_user_session_path, method: :delete, class: "navbar-link navbar-item" %>
         <% if policy(Article).create? %>
