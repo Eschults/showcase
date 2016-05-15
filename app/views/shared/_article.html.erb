@@ -2,9 +2,12 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="article-header">
+        <% if policy(article).update? %>
+          <%= link_to("<i class='fa fa-edit'></i>".html_safe, edit_article_path(article), class: "pull-right") %>
+        <% end %>
         <h2 class="hidden-sm hidden-xs"><%= article.title %></h2>
         <h4 class="visible-sm visible-xs"><%= article.title %></h4>
-        <span class="published-on">Publié le <%= l(article.created_at.to_date, format: :short) %></span>
+        <span class="published-on">Publié le <%= l(article.published_on, format: :short) %></span>
         <hr>
       </div>
       <% article_image_url = (article.photos.any? ? cl_image_path(article.photos.first.path) : "https://res.cloudinary.com/dlyblhapn/image/upload/v1463320711/quwd9d1j5gjqfod3j0cx.png") %>

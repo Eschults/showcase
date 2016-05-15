@@ -4,7 +4,15 @@ class ArticlesController < ApplicationController
   after_action :verify_authorized, except: [:index, :show]
 
   def index
-    @articles = Article.order(created_at: :desc)
+    if params[:category].blank?
+      @articles = Article.order(published_on: :desc)
+    elsif params[:category] == "Chroniques judiciaires"
+      @articles = Article.where(category: "Chroniques judiciaires").order(published_on: :desc)
+    elsif params[:category] == "Histoires judiciaires"
+      @articles = Article.where(category: "Histoires judiciaires").order(published_on: :desc)
+    elsif params[:category] == "Brèves de prétoires"
+      @articles = Article.where(category: "Brèves de prétoires").order(published_on: :desc)
+    end
   end
 
   def show
@@ -45,6 +53,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content, photos: [])
+    params.require(:article).permit(:title, :content, :category, :published_on, photos: [])
   end
 end
