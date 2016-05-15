@@ -1,16 +1,35 @@
 .stream {
   padding: 30px 150px;
+  @media(max-width: 1024px) {
+    padding: 30px 10px;
+  }
 }
 
 .article {
   .article-header {
     margin-bottom: 15px;
+    h2 {
+      margin-top: 0;
+    }
+    hr {
+      margin-top: 6px;
+      margin-bottom: 0;
+    }
+    .published-on {
+      color: $gray-light;
+      font-style: italic;
+    }
   }
-  .published-on {
-    color: $gray-light;
-    font-style: italic;
+  .article-banner {
+    background-size: cover !important;
+    background-position: center center;
+    height: 500px;
+    // width: 100%;
   }
   p {
     line-height: 1.6em;
+  }
+  .article-content {
+    text-align: justify;
   }
 }
