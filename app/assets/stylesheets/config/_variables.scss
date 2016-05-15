@@ -2,11 +2,11 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("http://fonts.googleapis.com/css?family=Raleway:400,100,300,700,500");
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,100,300,700,500");
 // @import url(https://fonts.googleapis.com/css?family=Cinzel:400,700,900);
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
-$base-font: "Varela Round", "Helvetica", "sans-serif";
-$header-font: Raleway, "Cinzel", "Helvetica", "sans-serif";
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
+$base-font: "Roboto Slab", "Helvetica", "sans-serif";
+$header-font: "Montserrat", "Cinzel", "Helvetica", "sans-serif";
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -40,3 +40,5 @@ $gray-dark:    lighten(#000, 20%);   // #333
 $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
+
+$bg-gray: #e9eaed;

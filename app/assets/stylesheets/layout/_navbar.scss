@@ -12,6 +12,14 @@
     color: white !important;
   }
 }
+
+.navbar-white {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  a {
+    color: #96281B !important;
+  }
+}
 /* Optional class to fix the navbar on top */
 .navbar-fixed {
   position: fixed;

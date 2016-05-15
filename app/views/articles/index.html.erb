@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="stream">
+    <% @articles.each do |article| %>
+      <%= render "shared/article", article: article %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="article" id="article_<%= article.id %>">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="article-header">
+        <h2 class="hidden-sm hidden-xs"><%= article.title %></h2>
+        <h4 class="visible-sm visible-xs"><%= article.title %></h4>
+        <span class="published-on">Publié le <%= l(article.created_at.to_date, format: :short) %></span>
+        <hr>
+      </div>
+      <% article_image_url = (article.photos.any? ? cl_image_path(article.photos.first.path) : "https://res.cloudinary.com/dlyblhapn/image/upload/v1463320711/quwd9d1j5gjqfod3j0cx.png") %>
+      <div class="article-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= article_image_url %>);"></div>
+      <div class="article-content">
+        <%= render_markdown(article.content) %>
+      </div>
+    </div>
+  </div>
+</div>
