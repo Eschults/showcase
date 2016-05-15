@@ -3,6 +3,7 @@
     <%= simple_form_for @article do |f| %>
       <%= f.input :title, class: "form-control" %>
       <%= f.input :content, class: "form-control", input_html: { rows: 20 } %>
+      <%= link_to "Markdown cheat sheet", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet", target: "_blank" %>
       <%= f.input :photos, as: :attachinary %>
       <%= f.submit "Créer article", class: "btn btn-primary" %>
     <% end %>
