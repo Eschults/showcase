@@ -30,3 +30,9 @@ body {
 .wrapper {
   margin-top: 20px;
 }
+
+.panel {
+  @media(max-width: 678px) {
+    margin-bottom: 15px;
+  }
+}
