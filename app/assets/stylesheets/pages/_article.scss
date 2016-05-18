@@ -40,4 +40,70 @@
   .article-content {
     text-align: justify;
   }
+  #accordion {
+    margin-bottom: 0;
+    .panel {
+      border: none;
+      border-top: 1px solid #ddd;
+      .media {
+        h4.media-heading {
+          font-size: 14px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    .panel-default > .panel-heading {
+      background-color: #fcfcfc;
+    }
+    .panel-collapse {
+      background-color: #fcfcfc;
+    }
+  }
+}
+.comment-img {
+  height: 32px;
+  width: 32px;
+}
+.new-comment {
+  label {
+    font-size: 14px;
+  }
+  input {
+    box-shadow: none;
+    border-radius: 2px;
+    font-size: 14px;
+    &:focus {
+      outline: none;
+      border-color: #5898f1;
+      box-shadow: none;
+    }
+  }
+  textarea {
+    width: 100%;
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: none;
+    border-radius: 1px;
+    resize: none;
+    padding: 10px;
+    height: 36px;
+    font-size: 14px;
+    height: 98px;
+    &:focus {
+      outline: none;
+      border-color: #5898f1;
+      box-shadow: none;
+    }
+  }
+  .btn-send {
+    font-size: 13px;
+    border-radius: 1px;
+    color: white;
+    background-color: #3A5795;
+    &:hover {
+      background-color: #1B316C;
+    }
+    float: right;
+  }
 }

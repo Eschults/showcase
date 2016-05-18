@@ -16,5 +16,32 @@
         <%= render_markdown(article.content) %>
       </div>
     </div>
+    <ul class="list-group">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingArticle_<%= article.id %>">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseArticle_<%= article.id %>" aria-expanded="true" aria-controls="collapseArticle_<%= article.id %>">
+                <%= t('.comments', default: "%{count} commentaires", count: article.comments.count) %>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseArticle_<%= article.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingArticle_<%= article.id %>">
+            <div class="panel-body" id="comments_article_<%= article.id %>">
+              <% article.comments.each do |comment| %>
+                <%= render "shared/comment", comment: comment %>
+              <% end %>
+              <div class="new-comment" id="comment_article_<%= article.id %>">
+                <%= simple_form_for [article, @comment], remote: true do |f| %>
+                  <%= f.input :name, label: "Prénom" %>
+                  <%= f.input :content, label: "Commentaire" %>
+                  <%= f.submit "Envoyer", class: "btn btn-send" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ul>
   </div>
 </div>

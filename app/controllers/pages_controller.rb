@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @articles = Article.where.not(category: "Brèves de prétoires").order(published_on: :desc)
+    @comment = Comment.new
   end
 
   def contact

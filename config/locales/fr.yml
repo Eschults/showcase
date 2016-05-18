@@ -1,2 +1,8 @@
 fr:
   hello: "Hello monde"
+  shared:
+    article:
+      comments:
+        zero: "Laissez un commentaire"
+        one: "1 commentaire"
+        other: "Commentaires (%{count})"

@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
   get '/contact' => 'pages#contact'
 
-  resources :articles
+  resources :articles, except: [:destroy] do
+    resources :comments, only: [:create]
+  end
 end

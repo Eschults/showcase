@@ -1,0 +1,8 @@
+<% if @comment.errors.any? %>
+<% else %>
+  var comment = $('<%= j render "shared/comment", comment: @comment %>').hide();
+  $('#comment_article_' + <%= @comment.article.id %>).slideUp();
+  setTimeout(function() {
+    $('#comments_article_' + <%= @comment.article.id %>).append(comment.slideDown());
+  }, 400);
+<% end %>
