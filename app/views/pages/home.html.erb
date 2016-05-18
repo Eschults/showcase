@@ -20,6 +20,10 @@
     $(document).ready(function() {
       if ($('.alert').length > 0) {
         $('.navbar-fixed').css('top', 52);
+        $(window).on('scroll', function() {
+          $('.alert').slideUp();
+          $('.navbar-fixed').css('top', 0);
+        })
         setTimeout(function() {
           $('.navbar-fixed').css('top', 0);
         }, 5000);
