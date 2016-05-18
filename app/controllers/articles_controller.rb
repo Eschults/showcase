@@ -13,9 +13,11 @@ class ArticlesController < ApplicationController
     elsif params[:category] == "Brèves de prétoires"
       @articles = Article.where(category: "Brèves de prétoires").order(published_on: :desc)
     end
+    @comment = Comment.new
   end
 
   def show
+    @comment = Comment.new
   end
 
   def new

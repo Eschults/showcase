@@ -1,0 +1,11 @@
+<div class="comment" id= "comment_<%= comment.id %>">
+  <div class="media">
+    <div class="media-left">
+      <%= image_tag "https://placeholdit.imgix.net/~text?txtsize=15&txt=32%C3%9732&w=64&h=64", class: "comment-img" %>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= comment.name %></h4>
+      <%= simple_format(comment.content) %>
+    </div>
+  </div>
+</div>
